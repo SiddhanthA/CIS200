@@ -1,1 +1,36 @@
+#include <iostream>
 
+using namespace std;
+
+int main() {
+
+	int length;
+	int width;
+	char symbol;
+	
+	cout << "Enter length of rectangle" << endl;
+	cin >> length;
+	
+	cout << "Enter width of rectangle" << endl;
+	cin >> width;
+    
+    cout << "Enter the symbol" << endl;
+    cin >> symbol;
+    
+    for(int l = 1; l <= length; l++) {
+    
+        for(int w = 1; w <= width; w++) {
+            if(l == 1 || l == length || w == 1 || w == width) {
+                cout << symbol;
+            }
+            else {
+                cout << " ";
+            }
+        }
+        
+        cout << endl;
+    }
+    
+	return 0;
+	
+}
