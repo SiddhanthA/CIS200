@@ -1,0 +1,30 @@
+/*
+Write a program to take a positive integer from users via cin and to print out the value of this number in its binary representation.
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+	int posInt;
+	int binary[100];
+	int i = 0;
+	
+	cout << "Enter postive integer" << endl;
+    cin >> posInt;
+    
+    while(posInt > 0) {
+        binary[i] = posInt % 2;
+        posInt = posInt / 2;
+        i++;
+    }
+    
+    for(int w = i - 1; w >= 0; w--) {
+        cout << binary[w];
+    }
+
+	return 0;
+	
+}
