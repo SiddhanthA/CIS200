@@ -1,0 +1,42 @@
+/*
+Write a main program to ask user to input an unsigned char value (0-255). Then, write a function (setFlag( )) that set the values for the array 
+flag based on the user input value for the unsigned char variable and print out the value of each array elements. 
+*/
+
+#include <iostream>
+using namespace std;
+
+void setFlag(unsigned char c, bool flag[]);
+
+int main() {
+
+    unsigned char c;
+    unsigned value;
+	bool flag[8];
+	
+	cout << "Enter unsigned char value (0 - 255)" << endl;
+	cin >> value;
+	c = value;
+	
+	setFlag(c, flag);
+	
+	for(int i = 0; i < 8; i++) {
+	    cout << "Flag " << i << " = " << (flag[i]?"true" : "false" )<< endl;
+	}
+}
+
+void setFlag(unsigned char c, bool flag[]) {
+    
+   unsigned char c1 = c;
+   
+   for(int i = 0; i < 8; i++) {
+       if(c1 & 1 == 1) {
+           flag[i] = true;
+       }
+       else {
+           flag[i] = false;
+       }
+       
+       c1 = c1 >> 1;
+   }
+}
