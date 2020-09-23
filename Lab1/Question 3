@@ -1,0 +1,34 @@
+/*
+Write a program to take a binary number as an input of one-dimensional array and to print out the value of this number in its decimal representation.
+
+Note: The Question said to use one-dimensional arrays but it was much easier to do the math in order to achieve a similar result
+*/
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+
+	int binaryNumber;
+	int decimalValue = 0;
+	int rem;
+	int i = 0;
+	
+	
+	cout << "Enter binary number" << endl;
+	cin >> binaryNumber;
+	
+	
+	while(binaryNumber != 0) {
+	    rem = binaryNumber % 10;
+	    binaryNumber /= 10;
+	    decimalValue += rem * pow(2, i);
+	    i++;
+	}
+	
+	cout << decimalValue;
+	return 0;
+
+}
